@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print my name</title>
+    <style>
+        body{
+            text-align: center;
+            font-size: 20px;
+            padding-top: 100px;
+            background-color: cornflowerblue;
+        }
+        .main{
+            font-size: 20px;
+        }
+        h2 {
+            font-size: 40px;
+            margin-bottom: 50px;
+        }
+        button{
+            margin: 0px 10px;
+            font-size: 20px;
+            padding: 10px 20px;
+            outline: none;
+            border: 1px solid black;
+            border-radius: 10px;
+            background: transparent;
+            background: #f0f0f0;
+            /* color: #f0f0f0; */
+        }
+        .my-name{
+            border: 1px solid black;
+            border-radius: 10px;
+            width: 20%;
+            height: 50px;
+            margin-left: 40px;
+        }
+        .print-div{
+            display: flex;
+            justify-content: center;
+            margin: 30px 70px;
+            font-size: 50px;
+        }
+        input[type="text"] {
+            margin-right: 10px;
+            padding: 10px 20px;
+            width: 25%;
+            outline: none;
+            border: 1px solid #bcc3c7;
+            border-radius: 10px;
+            background: transparent;
+            font-size: 20px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <main id="main">
+
+    <h2>Print my name</h2>
+    <input type="text" name="name" id="name" placeholder="Enter my name here">
+    <p>Click the button below to print my name</p>
+    <button id="btn">Click to print</button>
+    </main>
+
+    <div class="print-div">
+        <span>My name: </span>
+        <div class="my-name"></div>
+    </div>
+
+
+        <script>
+                const main = document.getElementById('main');
+                const inputName = document.getElementById('name');
+                const button = document.getElementById('btn');
+                            
+
+                const printDiv = document.querySelector('.print-div');
+                const myName = document.querySelector('.my-name');
+
+
+                //on clicking the button the name inputed should apper in the my-name div
+                    button.addEventListener('click', function(){ 
+                    console.log("inputName")
+                    myName.innerHTML = inputName.value   
+                    //empty the input box
+                    inputName.value = "" 
+                }) 
+                
+
+                //on clicking the inputbox again the my-name div should be empty
+                //in order to take new values
+                inputName.addEventListener('click', function(){
+                    myName.innerHTML= ""
+                })
+      </script>
+
+</body>
+</html>
